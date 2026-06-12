@@ -18,10 +18,10 @@ services: ## 使用のイメージを定義
       args:
         DOCKER_GID: "${DOCKER_GID:-1000}"
         DOCKER_UID: "${DOCKER_UID:-1000}"
-    container_name: nextJS-wordpress-debian ## Docker(desktop)で表示するコンテナ名
+    container_name: nextjs-wp ## Docker(desktop)で表示するコンテナ名
     restart: no
     ports:
-      - "8080:80" ## コンテナ内のポート80はホストでポート8080を使う    
+      - "8083:80" ## コンテナ内のポート80はホストでポート8080を使う    
     
     user: "1000:1000"
     volumes:
@@ -39,7 +39,7 @@ services: ## 使用のイメージを定義
 
   mysql:
     image: mysql:5.7 ## dockerhubからイメージをそのまま取得
-    container_name: nextJS-mysql-debian ## Docker(desktop)で表示するコンテナ名
+    container_name: nextJS-mysql ## Docker(desktop)で表示するコンテナ名
     restart: no
     volumes:
       - mysql_data:/var/lib/mysql ## この下に新規ドッカーボリュームを作る
