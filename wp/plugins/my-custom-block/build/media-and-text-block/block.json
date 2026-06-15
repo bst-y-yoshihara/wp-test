@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/media-and-text-block",
+  "version": "0.1.0",
+  "title": "画像・テキスト（左右並び）",
+  "category": "design",
+  "icon": "columns",
+  "description": "左に画像、右にタイトルと本文を配置するブロックです。",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-custom-block",
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h3",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

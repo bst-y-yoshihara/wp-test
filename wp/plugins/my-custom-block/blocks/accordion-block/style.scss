@@ -1,0 +1,98 @@
+.custom-accordion-block {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	margin-bottom: 16px;
+	overflow: hidden;
+	background: #fff;
+
+	/* 質問部分のボタン */
+	.accordion-header {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 16px;
+		background: #f9f9f9;
+		border: none;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		cursor: pointer;
+		position: relative;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background: #f0f0f0;
+		}
+	}
+
+	/* QとAのアイコン丸バッジ */
+	.accordion-icon-q, .accordion-icon-a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		font-size: 12px;
+		font-weight: bold;
+		margin-right: 12px;
+		flex-shrink: 0;
+	}
+	.accordion-icon-q { background: #e1f5fe; color: #0288d1; }
+	.accordion-icon-a { background: #ffe0b2; color: #f57c00; }
+
+	/* 右側の矢印マーク */
+	.accordion-arrow {
+		margin-left: auto;
+		width: 10px;
+		height: 10px;
+		border-top: 2px solid #666;
+		border-right: 2px solid #666;
+		transform: rotate(135deg); /* 下向き矢印 */
+		transition: transform 0.3s ease;
+	}
+
+	/* 回答部分（ここがアニメーションの肝） */
+	.accordion-content {
+		max-height: 0; /* 最初は高さを0にして隠す */
+		overflow: hidden;
+		transition: max-height 0.3s ease-out; /* 滑らかに動かす */
+	}
+
+	.accordion-content-box {
+		display: flex;
+		align-items: flex-start;
+		padding: 16px;
+		border-top: 1px solid #eee;
+		line-height: 1.6;
+	}
+
+	/* ---------------------------------
+	 * 開いたときの状態（is-open がついたとき）
+	 * --------------------------------- */
+	&.is-open {
+		.accordion-arrow {
+			transform: rotate(-45deg); /* 上向き矢印に変形 */
+			margin-top: 6px;
+		}
+		.accordion-content {
+			max-height: 500px; /* 十分な高さを指定して中身を表示 */
+		}
+	}
+
+	/* ---------------------------------
+	 * 管理画面（エディタ）用の微調整
+	 * --------------------------------- */
+	&.is-edit {
+		padding: 16px;
+		.accordion-header-editor, .accordion-content-editor {
+			display: flex;
+			align-items: center;
+			padding: 8px 0;
+		}
+		.accordion-trigger, .accordion-content-inner {
+			flex: 1;
+			border-bottom: 1px dashed #ccc;
+		}
+	}
+}

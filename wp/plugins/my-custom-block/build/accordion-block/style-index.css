@@ -1,0 +1,110 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/accordion-block/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.custom-accordion-block {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: #fff;
+  /* 質問部分のボタン */
+}
+.custom-accordion-block .accordion-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  background: #f9f9f9;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease;
+}
+.custom-accordion-block .accordion-header:hover {
+  background: #f0f0f0;
+}
+.custom-accordion-block {
+  /* QとAのアイコン丸バッジ */
+}
+.custom-accordion-block .accordion-icon-q, .custom-accordion-block .accordion-icon-a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.custom-accordion-block .accordion-icon-q {
+  background: #e1f5fe;
+  color: #0288d1;
+}
+.custom-accordion-block .accordion-icon-a {
+  background: #ffe0b2;
+  color: #f57c00;
+}
+.custom-accordion-block {
+  /* 右側の矢印マーク */
+}
+.custom-accordion-block .accordion-arrow {
+  margin-left: auto;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  transform: rotate(135deg); /* 下向き矢印 */
+  transition: transform 0.3s ease;
+}
+.custom-accordion-block {
+  /* 回答部分（ここがアニメーションの肝） */
+}
+.custom-accordion-block .accordion-content {
+  max-height: 0; /* 最初は高さを0にして隠す */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; /* 滑らかに動かす */
+}
+.custom-accordion-block .accordion-content-box {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  border-top: 1px solid #eee;
+  line-height: 1.6;
+}
+.custom-accordion-block {
+  /* ---------------------------------
+   * 開いたときの状態（is-open がついたとき）
+   * --------------------------------- */
+}
+.custom-accordion-block.is-open .accordion-arrow {
+  transform: rotate(-45deg); /* 上向き矢印に変形 */
+  margin-top: 6px;
+}
+.custom-accordion-block.is-open .accordion-content {
+  max-height: 500px; /* 十分な高さを指定して中身を表示 */
+}
+.custom-accordion-block {
+  /* ---------------------------------
+   * 管理画面（エディタ）用の微調整
+   * --------------------------------- */
+}
+.custom-accordion-block.is-edit {
+  padding: 16px;
+}
+.custom-accordion-block.is-edit .accordion-header-editor, .custom-accordion-block.is-edit .accordion-content-editor {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+.custom-accordion-block.is-edit .accordion-trigger, .custom-accordion-block.is-edit .accordion-content-inner {
+  flex: 1;
+  border-bottom: 1px dashed #ccc;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/accordion-block",
+  "version": "0.1.0",
+  "title": "アコーディオン（FAQ）",
+  "category": "design",
+  "icon": "arrow-down-alt2",
+  "description": "クリックすると開閉する、よくある質問（FAQ）用のブロックです。",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-custom-block",
+  "attributes": {
+    "question": {
+      "type": "string",
+      "source": "html",
+      "selector": ".accordion-trigger",
+      "default": ""
+    },
+    "answer": {
+      "type": "string",
+      "source": "html",
+      "selector": ".accordion-content-inner",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

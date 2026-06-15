@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/text-block",
+  "version": "0.1.0",
+  "title": "テキスト表示用",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "テキスト用のブロックです。",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-custom-block",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
